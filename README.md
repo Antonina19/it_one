@@ -1,4 +1,4 @@
-# Автотесты на страницу https://alfabank.ru/
+# Автотесты на страницу https://www.it-one.ru/
 
 ### Пример списка тестов в Allure TestOps
 
