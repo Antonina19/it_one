@@ -2,8 +2,8 @@ package tests;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.openqa.selenium.By;
 
-import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byId;
 import static com.codeborne.selenide.Selenide.*;
 import static io.qameta.allure.Allure.step;
@@ -65,14 +65,23 @@ public class ItOneTests extends TestBase {
     }
 
     @Test
-    @DisplayName("Поиск заголовка 'Технологии IT_ONE'")
-    void checkHeading() {
+    @DisplayName("Переход на страницу 'Компания'")
+    void checkOpenPageCompany() {
         step("Открытие страницы 'https://www.it-one.ru/'", () ->
                 open("https://www.it-one.ru/"));
 
-        step("Проверка заголовка 'Технологии IT_ONE'", () -> {
-            $$(".section__header").findBy(text("Технологии IT_ONE"));
+        step("Клик по ссылке 'Компания'", () -> {
+            $(By.linkText("Компания")).click();
         });
+
+        step("Свойство title открытой страницы сайта должно быть равно 'Компания'", () -> {
+            String expectedTitle = "Компания";
+            String actualTitle = title();
+
+            assertThat(actualTitle).isEqualTo(expectedTitle);
+        });
+
+
     }
 
     @Test

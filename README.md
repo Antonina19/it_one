@@ -40,7 +40,7 @@ allure serve build/allure-results
 
 ### Оповещение о результатах прохождения тестов через бот в телеграмме
 
-![Allure TestOps](./img/Telegram.png)
+![Allure TestOps](img/Telegram.png)
 
 #### Перейти в телеграмм канал можно [по ссылке](https://t.me/joinchat/sMZ0AnmoWmVhNDVi)
 
